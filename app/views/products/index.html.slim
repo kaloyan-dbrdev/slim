@@ -1,0 +1,28 @@
+<h1>Listing products</h1>
+h1 id="headline" qwe qwe ert
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  - @products.each do |p|
+    <tr>
+    | <td>#{p.name}</td><td>#{p.price}</td><td></td>
+    <td>
+    a href=product_path(p) Show
+    </td>
+    td
+      a href=edit_product_path(p) Edit
+    td
+      => link_to 'Destroy', p, method: :delete, data: { confirm: 'Are you sure?' }
+      / a href=product_path(p) *{rel: 'nofollow', data: { method: :delete, confirm: 'Are you sure?' } } Delete
+    </tr>
+</table>
+
+<br />
+
+a href=new_product_path New Product
